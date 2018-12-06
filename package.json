@@ -1,0 +1,34 @@
+{
+  "name": "experimental-ts-wc-template",
+  "version": "1.0.0",
+  "description": "Экспериментальный шаблон на TS для создания веб-компонентов",
+  "repository": "https://github.com/newbornfrontender/experimental-ts-wc-template.git",
+  "author": "Infant Frontender <newbornfrontender@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "clean": "rm -rf public/*.js",
+    "format": "prettier --write **/*.{html,js,ts,json,md}",
+    "compile": "rm -rf lib && tsc",
+    "compile:watch": "tsc -w",
+    "start": "yarn clean && rollup -c -w",
+    "serve": "nodemon server.js",
+    "build": "run-s clean compile && rollup -c && node htmlnano.js terser.js"
+  },
+  "dependencies": {
+    "@webcomponents/webcomponentsjs": "^2.2.1",
+    "tslib": "^1.9.3"
+  },
+  "devDependencies": {
+    "htmlnano": "^0.2.1",
+    "koa": "^2.6.2",
+    "koa-static": "^5.0.0",
+    "nodemon": "^1.18.7",
+    "npm-run-all": "^4.1.5",
+    "prettier": "^1.15.3",
+    "rollup": "^0.67.4",
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "terser": "^3.11.0",
+    "typescript": "^3.2.1"
+  }
+}
